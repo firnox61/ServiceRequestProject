@@ -12,6 +12,8 @@ namespace Entities.Concrete
     {
         [Key]
         public int OrderId { get; set; }
+        public int CustomerId { get; set; }
+        public int EmployeeId { get; set; }
         public string Adress { get; set; }
         public DateTime Date { get; set; }
         public string Email { get; set; }

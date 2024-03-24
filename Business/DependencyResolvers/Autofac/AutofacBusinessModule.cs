@@ -24,8 +24,16 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<EmployeeManager>().As<IEmployeeService>().SingleInstance();
             builder.RegisterType<EfEmployeeDal>().As<IEmployeeDal>().SingleInstance();
 
-            //builder.RegisterType<CustomerManager>().As<ICustomerService>().SingleInstance();
-            //builder.RegisterType<EfCustomerDal>().As<ICustomerDal>().SingleInstance();
+            builder.RegisterType<CustomerManager>().As<ICustomerService>().SingleInstance();
+            builder.RegisterType<EfCustomerDal>().As<ICustomerDal>().SingleInstance();
+
+            builder.RegisterType<ImageManager>().As<IImageService>().SingleInstance();
+            builder.RegisterType<EfImageDal>().As<IImageDal>().SingleInstance();
+
+            builder.RegisterType<OrderRequestManager>().As<IOrderRequestService>().SingleInstance();
+            builder.RegisterType<EfOrderRequestDal>().As<IOrderRequestDal>().SingleInstance();
+
+            builder.RegisterType<EmailSender>().As<IEmailSender>().SingleInstance();
 
             builder.RegisterType<FileHelper>().As<IFileHelper>().SingleInstance();
 
