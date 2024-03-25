@@ -17,5 +17,6 @@ namespace Business.Abstract
         IDataResult<OrderRequest> getById(int orderRequestId);
         IDataResult<List<OrderRequest>> GetAllByCustomerId(int customerId);
         IDataResult<List<OrderRequest>> GetAllByEmployeeId(int employeeId);
+        Task SendEmailAsync(string toEmail, string subject,OrderRequest orderRequest );
     }
 }

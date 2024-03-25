@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Constants;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -14,6 +15,24 @@ namespace WebAPI.Controllers
         public OrderRequestsController(IOrderRequestService orderRequestService)
         {
             _orderRequestService = orderRequestService;
+        }
+        [HttpPost("addmail")]
+        public async Task<IActionResult> Index( string toEmail, string subject, OrderRequest orderRequest)
+        {
+            // E-posta gönderme işlemi
+            try
+            {
+                await _orderRequestService.SendEmailAsync(toEmail, subject, orderRequest);
+                return Ok(Messages.SendEmailSucces);
+                // ViewBag.Message = "E-posta başarıyla gönderildi.";
+                // return View();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(Messages.SendEmailerror);
+                //ViewBag.Error = $"E-posta gönderilirken bir hata oluştu: {ex.Message}";
+                // return View();
+            }
         }
 
         [HttpPost("add")]

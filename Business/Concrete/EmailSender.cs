@@ -13,8 +13,8 @@ namespace Business.Concrete
     {
         private readonly string _smtpServer = "smtp.gmail.com"; // SMTP sunucu adresi
         private readonly int _port = 587; // SMTP port numarası
-        private readonly string _username = "firnox61@gmail.com"; // E-posta hesabı kullanıcı adı
-        private readonly string _password = "Ts.044060"; // E-posta hesabı şifresi
+        private readonly string _username = "veneles123@gmail.com"; // E-posta hesabı kullanıcı adı
+        private readonly string _password = "z z g f o a b i hyta i za f"; // E-posta hesabı şifresi
 
         public async Task SendEmailAsync(string toEmail, string subject, string body)
         {
@@ -22,7 +22,7 @@ namespace Business.Concrete
             {
                 message.Subject = subject;
                 message.Body = body;
-
+                
                 using (var client = new SmtpClient(_smtpServer, _port))
                 {
                     client.EnableSsl = true;
