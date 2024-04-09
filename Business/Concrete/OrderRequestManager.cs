@@ -31,7 +31,11 @@ namespace Business.Concrete
             using (var message = new MailMessage(_username, toEmail))
             {
                 message.Subject = subject;
-                message.Body = orderRequest.Description +orderRequest.Email+orderRequest.PhoneNumber+orderRequest.Adress;
+                //  message.Body = orderRequest.Description +orderRequest.Email+orderRequest.PhoneNumber+orderRequest.Adress;
+                message.Body = $"1. Açıklama: {orderRequest.Description}{Environment.NewLine}" +
+                 $"2. E-posta: {orderRequest.Email}{Environment.NewLine}" +
+                 $"3. Telefon Numarası: {orderRequest.PhoneNumber}{Environment.NewLine}" +
+                 $"4. Adres: {orderRequest.Adress}";
 
                 using (var client = new SmtpClient(_smtpServer, _port))
                 {
