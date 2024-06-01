@@ -10,6 +10,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Core.Constants;
 
 namespace Business.Concrete
 {
@@ -67,12 +68,12 @@ namespace Business.Concrete
 
         public IDataResult<List<OrderRequest>> GetAllByCustomerId(int customerId)
         {
-            return new SuccessDataResult<List<OrderRequest>>(_orderRequestDal.GetAll(o=>o.CustomerId == customerId));
+            return new SuccessDataResult<List<OrderRequest>>(Messages.FileNotFound);
         }
 
         public IDataResult<List<OrderRequest>> GetAllByEmployeeId(int employeeId)
         {
-            return new SuccessDataResult<List<OrderRequest>>(_orderRequestDal.GetAll(o=> o.EmployeeId == employeeId));
+            return new SuccessDataResult<List<OrderRequest>>(Messages.FileNotFound);
         }
 
         public IDataResult<OrderRequest> getById(int orderRequestId)

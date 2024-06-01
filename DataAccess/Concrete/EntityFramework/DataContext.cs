@@ -24,5 +24,5 @@ namespace DataAccess.Concrete.EntityFramework
     }
 }/*
   Add-Migration InitialCreate
-update-database "InitialCreate"
+update-database "volkan"
 */

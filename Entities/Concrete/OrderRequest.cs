@@ -13,12 +13,6 @@ namespace Entities.Concrete
     {
         [Key]
         public int OrderId { get; set; }
-        [ForeignKey("Customer")]
-        public int CustomerId { get; set; }
-        public Customer Customer { get; set; }
-        [ForeignKey("Employee")]
-        public int EmployeeId { get; set; }
-        public Employee Employee { get; set; }
         public string Adress { get; set; }
         public DateTime Date { get; set; }
         public string Email { get; set; }
